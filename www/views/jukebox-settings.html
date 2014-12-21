@@ -1,0 +1,24 @@
+<div class="col-xs-12" id="jukebox-settings">
+    <h1>Jukebox Settings</h1>
+    <form ng-submit="saveSettings()">
+        <div class="form-group">
+            <label for="music-path">Music Path</label>
+            <div class="input-group input-group">
+                <span class="input-group-addon"><i class="fa fa-folder"></i></span>
+                <input name="music-path" id="music-path" type="text" class="form-control" ng-model="settings.MusicDirectory" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="playlist-path">Playlist Path</label>
+            <div class="input-group input-group">
+                <span class="input-group-addon"><i class="fa fa-folder"></i></span>
+                <input name="playlist-path" id="playlist-path" type="text" class="form-control" ng-model="settings.PlaylistDirectory" />
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success btn-full-width"><i class="fa fa-save"></i> Save Settings</button>
+
+    </form>
+
+</div>

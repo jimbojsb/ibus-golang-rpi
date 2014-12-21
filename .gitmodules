@@ -1,0 +1,12 @@
+[submodule "src/github.com/fhs/gompd"]
+	path = src/github.com/fhs/gompd
+	url = git@github.com:fhs/gompd
+[submodule "src/github.com/gorilla/context"]
+	path = src/github.com/gorilla/context
+	url = git@github.com:gorilla/context
+[submodule "src/github.com/gorilla/mux"]
+	path = src/github.com/gorilla/mux
+	url = git@github.com:gorilla/mux
+[submodule "src/github.com/johnlauer/serial"]
+	path = src/github.com/johnlauer/serial
+	url = git@github.com:johnlauer/goserial

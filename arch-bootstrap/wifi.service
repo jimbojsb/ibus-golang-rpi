@@ -1,0 +1,23 @@
+[Unit]
+Description=WiFi
+Wants=network.target
+Before=network.target
+BindsTo=sys-subsystem-net-devices-wlan0.device
+After=sys-subsystem-net-devices-wlan0.device
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/brctl addbr br0
+ExecStart=/usr/bin/brctl addif br0 wlan0
+ExecStart=/usr/bin/ifconfig br0 10.10.10.1/24
+ExecStart=/usr/bin/hostapd -B /etc/hostapd/hostapd.conf
+ExecStart=/usr/sbin/dhcpd
+
+ExecStop=/usr/bin/killall dhcpd
+ExecStop=/usr/bin/killall hostapd
+ExecStop=/usr/bin/ifconfig br0 down
+ExecStop=/usr/bin/brctl delbr br0
+
+[Install]
+WantedBy=multi-user.target

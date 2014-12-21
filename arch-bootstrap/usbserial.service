@@ -1,0 +1,13 @@
+[Unit]
+Description=Resler IBus Drivers
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/insmod /usr/lib/modules/3.12.28-1-ARCH/kernel/drivers/usb/serial/usbserial.ko.gz
+ExecStart=/usr/bin/insmod /usr/lib/modules/3.12.28-1-ARCH/kernel/drivers/usb/serial/cp210x.ko
+
+ExecStop=/usr/bin/rmmod /usr/lib/modules/3.12.28-1-ARCH/kernel/drivers/usb/serial/usbserial.ko.gz
+ExecStop=/usr/bin/rmmod /usr/lib/modules/3.12.28-1-ARCH/kernel/drivers/usb/serial/cp210x.ko
+
+[Install]
+WantedBy=multi-user.target

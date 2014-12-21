@@ -1,0 +1,11 @@
+[Unit]
+Description=USB Mounter
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/mount /dev/sda1 /music
+ExecStop=/usr/bin/umount /dev/sda1
+
+[Install]
+WantedBy=multi-user.target

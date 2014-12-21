@@ -1,0 +1,16 @@
+<div class="col-xs-12" id="jukebox-playlists-all">
+    <h1>All Playlists</h1>
+    <table class="table table-striped">
+        {{#playlists}}
+            <tr id="pl-{{playlist}}">
+                <td class="playlist-name">{{playlist}}</td>
+                <td class="playlist-controls">
+                    <button onclick="Playlists.play('{{playlist}}');" class="btn btn-success"><i class="fa fa-play"></i></button>
+                    <button class="btn btn-warning"><i class="fa fa-pencil"></i></button>
+                    <button onclick="Playlists.delete('{{playlist}}');" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                </td>
+            </tr>
+        {{/playlists}}
+    </table>
+
+</div>
