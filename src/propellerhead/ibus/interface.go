@@ -33,6 +33,7 @@ func (i *Interface) Listen(ioDevicePath string) {
 	go func() {
 		for {
 			pkt := <- i.outboundPackets
+			fmt.Printf("WRITING PACKET: %s\n", pkt.AsString())
 			serialPort.Write(pkt.AsBytes())
 		}
 	}()
