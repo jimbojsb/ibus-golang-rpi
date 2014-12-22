@@ -22,7 +22,7 @@ func main() {
 
 	wait.Add(1)
 	ibusInterface := ibus.NewInterface(ac)
-	go ibusInterface.Listen()
+	go ibusInterface.Listen(ttyPath)
 
 	wait.Add(1)
 	app := webapp.New(ibusInterface.GetOutboundChannel(), ac)
