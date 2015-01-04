@@ -24,6 +24,7 @@ func (cdp *CdPlayer) Handle(p *IbusPacket) {
 	switch p.Src {
 	case IBUS_DEVICE_RADIO:
 		if p.messageIs([]string{"01"}) {
+			Logger().Info("received cdplayer ping")
 			cdp.pong()
 		}
 		if p.messageIs([]string{"38", "0a", "00"}) {
@@ -64,6 +65,7 @@ func (cdp *CdPlayer) pong() {
 	pkt.Dest = IBUS_DEVICE_BROADCAST
 	pkt.Message = []string{"02", "00"}
 	IbusDevices().SerialInterface.Write(pkt)
+	Logger().Info("sent cdplayer pong")
 }
 
 

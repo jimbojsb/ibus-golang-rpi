@@ -1,9 +1,5 @@
 package propellerhead
 
-import (
-	"fmt"
-)
-
 type IbusPacketRouter struct {
 	in chan *IbusPacket
 }
@@ -24,9 +20,6 @@ func (r *IbusPacketRouter) Listen() {
 }
 
 func (r *IbusPacketRouter) route(p *IbusPacket) {
-
-	fmt.Println(p.AsDebugString())
-
 	switch (p.Dest) {
 	case IBUS_DEVICE_CDPLAYER:
 		IbusDevices().CdPlayer.Handle(p)

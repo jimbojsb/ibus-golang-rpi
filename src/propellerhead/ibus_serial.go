@@ -1,7 +1,6 @@
 package propellerhead
 
 import (
-	"fmt"
 	"github.com/johnlauer/serial"
 )
 
@@ -34,7 +33,7 @@ func (i *IbusSerialInterface) Listen(ioDevicePath string) {
 	go func() {
 		for {
 			pkt := <- i.outboundPackets
-			fmt.Printf("\nWRITING PACKET: %s\n", pkt.AsString())
+			Logger().Debug("sent packet " + pkt.AsString())
 			serialPort.Write(pkt.AsBytes())
 		}
 	}()
@@ -46,7 +45,7 @@ func (i *IbusSerialInterface) Listen(ioDevicePath string) {
 			i.parser.Push(char[0])
 			if (i.parser.HasPacket()) {
 				pkt := i.parser.GetPacket();
-				fmt.Printf("%+v\n", pkt)
+				Logger().Debug("received packet " + pkt.AsString())
 				i.inboundPackets <- pkt
 			}
 		}

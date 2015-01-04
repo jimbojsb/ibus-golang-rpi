@@ -73,11 +73,6 @@ func getHexStringSliceFromByteSlice(bytes []byte) ([]string) {
 	return output
 }
 
-func (pkt *IbusPacket) AsDebugString() (string) {
-	output := IbusDeviceNames[pkt.Src] + " -> " + IbusDeviceNames[pkt.Dest] + ": " + strings.Join(pkt.Message, " ")
-	return output
-}
-
 func (pkt *IbusPacket) CalculateChecksum() (string){
 	var xor byte
 	xor = xor ^ getByteFromHexString(pkt.Src)
