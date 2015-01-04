@@ -13,7 +13,7 @@ const IBUS_DEVICE_BROADCAST = "ff"
 
 type IbusDeviceRegistry struct {
 	CdPlayer *CdPlayer
-	SerialInterface *SerialInterface
+	SerialInterface *IbusSerialInterface
 }
 
 var IbusDeviceNames = map[string]string {

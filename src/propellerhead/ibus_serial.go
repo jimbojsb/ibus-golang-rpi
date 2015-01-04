@@ -5,15 +5,15 @@ import (
 	"github.com/johnlauer/serial"
 )
 
-type SerialInterface struct {
+type IbusSerialInterface struct {
 	inboundPackets chan *IbusPacket
 	outboundPackets chan *IbusPacket
 	parser *IbusPacketParser
 	router *IbusPacketRouter
 }
 
-func NewSerialInterface() (*SerialInterface) {
-	iface := new(SerialInterface)
+func NewSerialInterface() (*IbusSerialInterface) {
+	iface := new(IbusSerialInterface)
 	iface.inboundPackets = make(chan *IbusPacket, 32)
 	iface.outboundPackets = make(chan *IbusPacket, 32)
 	iface.parser = NewIbusPacketParser()
@@ -22,11 +22,11 @@ func NewSerialInterface() (*SerialInterface) {
 	return iface
 }
 
-func (i *SerialInterface) Write (pkt *IbusPacket) {
+func (i *IbusSerialInterface) Write (pkt *IbusPacket) {
 	i.outboundPackets <- pkt
 }
 
-func (i *SerialInterface) Listen(ioDevicePath string) {
+func (i *IbusSerialInterface) Listen(ioDevicePath string) {
 
 	config := &serial.Config{Name: ioDevicePath, Baud: 9600, RtsOn: true}
 	serialPort, _ := serial.OpenPort(config)
@@ -34,7 +34,7 @@ func (i *SerialInterface) Listen(ioDevicePath string) {
 	go func() {
 		for {
 			pkt := <- i.outboundPackets
-			fmt.Printf("WRITING PACKET: %s\n", pkt.AsString())
+			fmt.Printf("\nWRITING PACKET: %s\n", pkt.AsString())
 			serialPort.Write(pkt.AsBytes())
 		}
 	}()

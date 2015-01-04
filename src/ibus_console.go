@@ -24,7 +24,7 @@ func main() {
 		for {
 			byte := make([]byte, 1)
 			serialPort.Read(byte)
-			parser.Push(byte[1])
+			parser.Push(byte[0])
 			if (parser.HasPacket()) {
 				pkt := parser.GetPacket();
 				fmt.Println("\n<== " + pkt.AsString())

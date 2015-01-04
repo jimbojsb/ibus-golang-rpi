@@ -2,36 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1486eb2-6cf0-4136-ad1b-d7fbc975fc91" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/github.com/chuckpreslar/emission" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/github.com/op/logging" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/propellerhead/emitter.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_cdplayer.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_serial.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test1" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/propellerhead/ibus/boardmonitor.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/propellerhead/ibus/cdplayer.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/propellerhead/ibus/menustatemachine.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/propellerhead/ibus/navigation.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/propellerhead/ibus/parksensors.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/propellerhead/ibus/radio.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/propellerhead/ibus/serialInterface.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/propellerhead/mpd/mpdrunner.go" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/propellerhead/webapp/app.go" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/propellerhead/airplay/dacp.go" afterPath="$PROJECT_DIR$/src/propellerhead/airplay_dacp.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/propellerhead/airplay/metadata.go" afterPath="$PROJECT_DIR$/src/propellerhead/airplay_metadata.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/propellerhead/airplay/shairportrunner.go" afterPath="$PROJECT_DIR$/src/propellerhead/airplay_shairport.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/propellerhead/audio/controller.go" afterPath="$PROJECT_DIR$/src/propellerhead/audiocontroller.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/propellerhead/ibus/devices.go" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_devices.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/propellerhead/ibus/packet.go" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_packet.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/propellerhead/ibus/parser.go" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_parser.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/propellerhead/ibus/router.go" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_router.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/propellerhead/mpd/mpdconf.go" afterPath="$PROJECT_DIR$/src/propellerhead/mpd.go" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/propellerhead/prefs/prefs.go" afterPath="$PROJECT_DIR$/src/propellerhead/prefs.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitmodules" afterPath="$PROJECT_DIR$/.gitmodules" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/propellerhead/api.go" afterPath="$PROJECT_DIR$/src/propellerhead/api.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ibus_simulator.go" afterPath="$PROJECT_DIR$/src/ibus_simulator.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/propellerhead.go" afterPath="$PROJECT_DIR$/src/propellerhead.go" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ibus.go" afterPath="$PROJECT_DIR$/src/ibus_tester.go" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ibus_simulator.go" afterPath="$PROJECT_DIR$/src/ibus_console.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tty1" afterPath="$PROJECT_DIR$/tty1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tty2" afterPath="$PROJECT_DIR$/tty2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/propellerhead/ibus_devices.go" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_devices.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/propellerhead/ibus_serial.go" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_serial.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="propellerhead.iws" />
@@ -57,11 +33,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ibus_simulator.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ibus_simulator.go">
+      <file leaf-file-name="ibus_serial.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_serial.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4348811" vertical-offset="0" max-vertical-offset="883">
-              <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+              <caret line="48" column="33" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ibus_console.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ibus_console.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33975086" vertical-offset="0" max-vertical-offset="883">
+              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ibus_tester.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ibus_tester.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="252">
+              <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="propellerhead.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/propellerhead.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+              <caret line="3" column="10" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ibus_devices.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_devices.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="672">
+              <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ibus_router.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_router.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1776">
+              <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -93,7 +119,6 @@
         <option value="$PROJECT_DIR$/src/propellerhead/airplay_dacp.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/airplay_metadata.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/api.go" />
-        <option value="$PROJECT_DIR$/src/propellerhead/ibus_devices.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/prefs.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/airplay_shairport.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/audiocontroller.go" />
@@ -104,7 +129,11 @@
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_cdplayer.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_router.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_parser.go" />
+        <option value="$PROJECT_DIR$/src/ibus.go" />
+        <option value="$PROJECT_DIR$/src/propellerhead/ibus_devices.go" />
+        <option value="$PROJECT_DIR$/src/ibus_tester.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_serial.go" />
+        <option value="$PROJECT_DIR$/src/ibus_console.go" />
       </list>
     </option>
   </component>
@@ -631,18 +660,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ibus.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="883">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prefs.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="883">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -734,14 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/propellerhead.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2446206" vertical-offset="0" max-vertical-offset="883">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_packet.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.85050964" vertical-offset="413" max-vertical-offset="1296">
@@ -758,22 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_devices.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4892412" vertical-offset="0" max-vertical-offset="883">
-          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_router.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6715742" vertical-offset="893" max-vertical-offset="1776">
-          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_parser.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5651189" vertical-offset="389" max-vertical-offset="1284">
@@ -782,18 +780,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_serial.go">
+    <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_router.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6659117" vertical-offset="0" max-vertical-offset="883">
-          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1776">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ibus_simulator.go">
+    <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_devices.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4348811" vertical-offset="0" max-vertical-offset="883">
-          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="672">
+          <caret line="36" column="56" selection-start-line="36" selection-start-column="56" selection-end-line="36" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/propellerhead.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_serial.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <caret line="48" column="33" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ibus_tester.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="252">
+          <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/go/1.3.3/libexec/src/pkg/io/io.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33295584" vertical-offset="510" max-vertical-offset="5988">
+          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ibus_console.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33975086" vertical-offset="0" max-vertical-offset="883">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
           <folding />
         </state>
       </provider>
