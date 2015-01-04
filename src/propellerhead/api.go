@@ -65,7 +65,5 @@ func ServeApi() {
 //
 //		}).Methods("POST")
 //
-//	r.PathPrefix("/").Handler(http.FileServer(http.Dir(prefs.GetWorkingDir() + "/www")))
-//	http.Handle("/", r)
 //	http.ListenAndServe(":9000", nil)
 }
