@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"bufio"
 	"os"
-	"propellerhead/ibus"
+	"propellerhead"
 	"strings"
 	"github.com/johnlauer/serial"
 )
@@ -20,11 +20,11 @@ func main() {
 	serialPort, _ := serial.OpenPort(config)
 
 	go func() {
-		parser := new(ibus.Parser)
+		parser := propellerhead.NewIbusPacketParser()
 		for {
 			byte := make([]byte, 1)
 			serialPort.Read(byte)
-			parser.Push(byte)
+			parser.Push(byte[1])
 			if (parser.HasPacket()) {
 				pkt := parser.GetPacket();
 				fmt.Println("\n<== " + pkt.AsString())
@@ -39,7 +39,7 @@ func main() {
 		text, _ := reader.ReadString('\n')
 		text = strings.TrimSpace(text)
 		hexChars := strings.Split(text, " ")
-		packet := new(ibus.Packet)
+		packet := new(propellerhead.IbusPacket)
 		packet.Src = hexChars[0]
 		packet.Dest = hexChars[1]
 		packet.Message = hexChars[2:len(hexChars)]
