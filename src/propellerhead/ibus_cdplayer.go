@@ -11,12 +11,14 @@ const EVENT_IBUS_CD_PLAY = "cd_play"
 
 type CdPlayer struct {
 	hasBeenPolled bool
+	isPlaying bool
 }
 
 func NewCdPlayer() *CdPlayer {
 	cdp := new(CdPlayer)
 	cdp.hasBeenPolled = false
 	cdp.announce()
+	cdp.isPlaying = false
 	return cdp
 }
 
@@ -59,13 +61,22 @@ func (cdp *CdPlayer) announce() {
 }
 
 func (cdp *CdPlayer) pong() {
-	cdp.hasBeenPolled = true
-	pkt := new(IbusPacket)
-	pkt.Src = IBUS_DEVICE_CDPLAYER
-	pkt.Dest = IBUS_DEVICE_BROADCAST
-	pkt.Message = []string{"02", "00"}
-	IbusDevices().SerialInterface.Write(pkt)
-	Logger().Info("sent cdplayer pong")
+	if (!cdp.hasBeenPolled) {
+		cdp.hasBeenPolled = true
+		pkt := new(IbusPacket)
+		pkt.Src = IBUS_DEVICE_CDPLAYER
+		pkt.Dest = IBUS_DEVICE_BROADCAST
+		pkt.Message = []string{"02", "00"}
+		IbusDevices().SerialInterface.Write(pkt)
+		Logger().Info("sent cdplayer broadcast pong")
+	} else {
+		pkt := new(IbusPacket)
+		pkt.Src = IBUS_DEVICE_CDPLAYER
+		pkt.Dest = IBUS_DEVICE_RADIO
+		pkt.Message = []string{"39", "00", "02", "00", "3F", "00", "01", "01"}
+		IbusDevices().SerialInterface.Write(pkt)
+		Logger().Info("sent cdplayer radio status pong")
+	}
 }
 
 
