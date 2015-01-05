@@ -13,12 +13,6 @@
 [submodule "src/github.com/chuckpreslar/emission"]
 	path = src/github.com/chuckpreslar/emission
 	url = http://github.com/chuckpreslar/emission.git
-[submodule "src/github.com/op/go-logging"]
-	path = src/github.com/op/go-logging
-	url = http://github.com/op/go-logging.git
-[submodule "src/github.com/op/logging"]
-	path = src/github.com/op/logging
-	url = http://github.com/op/go-logging.git
 [submodule "src/github.com/sirupsen/logrus"]
 	path = src/github.com/sirupsen/logrus
 	url = http://github.com/sirupsen/logrus.git
