@@ -14,6 +14,8 @@ const IBUS_DEVICE_BROADCAST = "ff"
 type IbusDeviceRegistry struct {
 	CdPlayer *CdPlayer
 	SerialInterface *IbusSerialInterface
+	NavigationComputer *IbusNavigationComputer
+	Broadcast *IbusBroadcast
 }
 
 var IbusDeviceNames = map[string]string {
@@ -35,6 +37,8 @@ func IbusDevices() (*IbusDeviceRegistry) {
 		ibusDeviceregistry = new(IbusDeviceRegistry)
 		ibusDeviceregistry.CdPlayer = NewCdPlayer()
 		ibusDeviceregistry.SerialInterface = NewSerialInterface()
+		ibusDeviceregistry.NavigationComputer = NewIbusNavigationComputer()
+		ibusDeviceregistry.Broadcast = NewIbusBroadcast()
 	}
 	return ibusDeviceregistry
 }

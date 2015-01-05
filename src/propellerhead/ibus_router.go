@@ -23,6 +23,10 @@ func (r *IbusPacketRouter) route(p *IbusPacket) {
 	switch (p.Dest) {
 	case IBUS_DEVICE_CDPLAYER:
 		IbusDevices().CdPlayer.Handle(p)
+	case IBUS_DEVICE_NAV_COMPUTER:
+		IbusDevices().NavigationComputer.Handle(p)
+	case IBUS_DEVICE_BROADCAST:
+		IbusDevices().Broadcast.Handle(p)
 	}
 
 //	switch (p.Src) {
@@ -105,31 +109,5 @@ func (r *IbusPacketRouter) route(p *IbusPacket) {
 //			if (p.messageIs([]string{"48", "90"})) {
 //				fmt.Println("prev release")
 //			}
-//		case DEVICE_BROADCAST:
-//			fmt.Print("BROADCAST: ")
-//			if (p.messageIs([]string{"48", "34"})) {
-//				fmt.Println("menu press")
-//			}
-//			if (p.messageIs([]string{"48", "74"})) {
-//				fmt.Println("menu hold")
-//			}
-//			if (p.messageIs([]string{"48", "b4"})) {
-//				fmt.Println("menu release")
-//			}
-//			if (p.messageIs([]string{"48", "07"})) {
-//				fmt.Println("aux heating push")
-//			}
-//		case DEVICE_NAV_COMPUTER:
-//			fmt.Print("NAVCOMPUTER: ")
-//
-//			if (p.messageIs([]string{"48", "05"})) {
-//				fmt.Println("nav knob push")
-//			}
-//			if (p.messageIs([]string{"48", "45"})) {
-//				fmt.Println("nav knob hold")
-//			}
-//			if (p.messageIs([]string{"48", "85"})) {
-//				fmt.Println("nav knob release")
-//			}
-//		}
+
 }
