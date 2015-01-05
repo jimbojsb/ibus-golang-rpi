@@ -9,6 +9,7 @@ type IbusSerialInterface struct {
 	outboundPackets chan *IbusPacket
 	parser *IbusPacketParser
 	router *IbusPacketRouter
+	LogOnly bool
 }
 
 func NewSerialInterface() (*IbusSerialInterface) {
@@ -17,6 +18,7 @@ func NewSerialInterface() (*IbusSerialInterface) {
 	iface.outboundPackets = make(chan *IbusPacket, 32)
 	iface.parser = NewIbusPacketParser()
 	iface.router = NewIbusPacketRouter(iface.inboundPackets)
+	iface.LogOnly = false
 	iface.router.Listen()
 	return iface
 }
@@ -30,13 +32,15 @@ func (i *IbusSerialInterface) Listen(ioDevicePath string) {
 	config := &serial.Config{Name: ioDevicePath, Baud: 9600, RtsOn: true}
 	serialPort, _ := serial.OpenPort(config)
 
-	go func() {
-		for {
-			pkt := <- i.outboundPackets
-			Logger().Debug("sent packet " + pkt.AsString())
-			serialPort.Write(pkt.AsBytes())
-		}
-	}()
+	if (!i.LogOnly) {
+		go func() {
+			for {
+				pkt := <- i.outboundPackets
+				Logger().Debug("sent packet " + pkt.AsString())
+				serialPort.Write(pkt.AsBytes())
+			}
+		}()
+	}
 
 	go func() {
 		for {
@@ -46,7 +50,9 @@ func (i *IbusSerialInterface) Listen(ioDevicePath string) {
 			if (i.parser.HasPacket()) {
 				pkt := i.parser.GetPacket();
 				Logger().Debug("received packet " + pkt.AsString())
-				i.inboundPackets <- pkt
+				if (!i.LogOnly) {
+					i.inboundPackets <- pkt
+				}
 			}
 		}
 	}()
