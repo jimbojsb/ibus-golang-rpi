@@ -6,7 +6,8 @@ import (
 	"os"
 	"propellerhead"
 	"strings"
-	"github.com/johnlauer/serial"
+	"github.com/mikepb/serial"
+	"time"
 )
 
 func main() {
@@ -16,8 +17,17 @@ func main() {
 	fmt.Println("Packets are formatted all lower case hex, [src] [dest] [message...]")
 	fmt.Println("Quote ascii strings for text conversion")
 
-	config := &serial.Config{Name: ttyPath, Baud: 9600, RtsOn: true}
-	serialPort, _ := serial.OpenPort(config)
+
+
+	config := serial.RawOptions
+	config.FlowControl = serial.FLOWCONTROL_RTSCTS
+	config.BitRate = 9600
+
+	serialPort, _ := config.Open(ttyPath)
+	serialPort.SetReadDeadline(time.Time{})
+
+	ports, _ := serial.PortByName(ttyPath)
+	fmt.Printf("%+v", ports)
 
 	go func() {
 		parser := propellerhead.NewIbusPacketParser()

@@ -1,7 +1,7 @@
 package propellerhead
 
 import (
-	"github.com/johnlauer/serial"
+	"github.com/mikepb/serial"
 )
 
 type IbusSerialInterface struct {
@@ -29,8 +29,12 @@ func (i *IbusSerialInterface) Write (pkt *IbusPacket) {
 
 func (i *IbusSerialInterface) Listen(ioDevicePath string) {
 
-	config := &serial.Config{Name: ioDevicePath, Baud: 9600, RtsOn: true}
-	serialPort, _ := serial.OpenPort(config)
+	config := serial.RawOptions
+	config.FlowControl = serial.FLOWCONTROL_RTSCTS
+	config.BitRate = 9600
+
+	serialPort, _ := config.Open(ioDevicePath)
+	defer serialPort.Close()
 
 	if (!i.LogOnly) {
 		go func() {
