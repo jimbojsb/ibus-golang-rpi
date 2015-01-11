@@ -1,5 +1,13 @@
 package propellerhead
 
+
+/**
+	cs8 - 8 bits
+	parenb - generate parity
+	-parodd - use event parity
+	-cstopb - 1 stop bit
+	9600 - speed
+ */
 import (
 	linux_serial "github.com/mikepb/serial"
 	mac_serial "github.com/johnlauer/serial"
