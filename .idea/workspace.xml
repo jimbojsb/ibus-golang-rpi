@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1486eb2-6cf0-4136-ad1b-d7fbc975fc91" name="Default" comment="" />
+    <list default="true" id="d1486eb2-6cf0-4136-ad1b-d7fbc975fc91" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ibus_send.go" afterPath="$PROJECT_DIR$/src/ibus_send.go" />
+    </list>
     <ignored path="propellerhead.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -45,13 +47,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitmodules" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitmodules" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitmodules">
           <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25322393" vertical-offset="0" max-vertical-offset="853">
+            <state vertical-scroll-proportion="-7.2" vertical-offset="0" max-vertical-offset="324">
               <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
@@ -98,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ibus_send.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ibus_send.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ibus_send.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="372">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.095130235" vertical-offset="0" max-vertical-offset="883">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,7 +176,6 @@
         <option value="$PROJECT_DIR$/ansible/inventory" />
         <option value="$PROJECT_DIR$/ansible/propellerhead.yml" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_parser.go" />
-        <option value="$PROJECT_DIR$/.gitmodules" />
         <option value="$PROJECT_DIR$/src/serialtest.go" />
         <option value="$PROJECT_DIR$/src/ibus_console.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_serial.go" />
@@ -184,8 +185,9 @@
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_router.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_ike.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_cdplayer.go" />
-        <option value="$PROJECT_DIR$/src/ibus_send.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/serialport.go" />
+        <option value="$PROJECT_DIR$/.gitmodules" />
+        <option value="$PROJECT_DIR$/src/ibus_send.go" />
       </list>
     </option>
   </component>
@@ -431,7 +433,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1006" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -440,7 +442,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.171875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.171875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -882,14 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ibus_send.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="372">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_serial.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="708">
@@ -911,8 +905,16 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25322393" vertical-offset="0" max-vertical-offset="853">
+        <state vertical-scroll-proportion="-7.2" vertical-offset="0" max-vertical-offset="324">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ibus_send.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.095130235" vertical-offset="0" max-vertical-offset="883">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>

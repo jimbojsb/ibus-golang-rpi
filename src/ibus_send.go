@@ -5,7 +5,6 @@ import (
 	"os"
 	"propellerhead"
 	"strings"
-	"time"
 )
 
 func main() {
