@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1486eb2-6cf0-4136-ad1b-d7fbc975fc91" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/github.com/johnlauer/serial" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_ike.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_mfw.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_radio.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ansible/inventory" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ansible/propellerhead.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/propellerhead/serialport.go" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/serialtest.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitmodules" afterPath="$PROJECT_DIR$/.gitmodules" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/propellerhead/ibus_cdplayer.go" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_cdplayer.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ibus_console.go" afterPath="$PROJECT_DIR$/src/ibus_console.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/propellerhead/ibus_devices.go" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_devices.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/propellerhead/ibus_parser.go" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_parser.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/propellerhead/ibus_router.go" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_router.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/propellerhead/ibus_serial.go" afterPath="$PROJECT_DIR$/src/propellerhead/ibus_serial.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ibus_send.go" afterPath="$PROJECT_DIR$/src/ibus_send.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/propellerhead/serialport.go" afterPath="$PROJECT_DIR$/src/propellerhead/serialport.go" />
     </list>
     <ignored path="propellerhead.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,7 +31,7 @@
       <file leaf-file-name="ibus_serial.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_serial.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="708">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="708">
               <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
               <folding />
             </state>
@@ -62,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serialport.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="serialport.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/propellerhead/serialport.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="696">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.38052094" vertical-offset="0" max-vertical-offset="883">
+              <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -92,11 +78,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ibus_cdplayer.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ibus_cdplayer.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_cdplayer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45639864" vertical-offset="137" max-vertical-offset="1092">
+            <state vertical-scroll-proportion="0.0" vertical-offset="137" max-vertical-offset="1092">
               <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ibus_debugger.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ibus_debugger.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ibus_send.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ibus_send.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="372">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,16 +123,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="264">
               <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="propellerhead.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/propellerhead.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -173,7 +169,6 @@
         <option value="$PROJECT_DIR$/src/ibus_debugger.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/airplay_shairport.go" />
         <option value="$PROJECT_DIR$/arch-bootstrap/install.sh" />
-        <option value="$PROJECT_DIR$/src/ibus_send.go" />
         <option value="$PROJECT_DIR$/src/packet_stream_tester.go" />
         <option value="$PROJECT_DIR$/src/serial_logger.go" />
         <option value="$PROJECT_DIR$/ansible/inventory" />
@@ -183,13 +178,14 @@
         <option value="$PROJECT_DIR$/src/serialtest.go" />
         <option value="$PROJECT_DIR$/src/ibus_console.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_serial.go" />
-        <option value="$PROJECT_DIR$/src/propellerhead/serialport.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_mfw.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_radio.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_devices.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_router.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_ike.go" />
         <option value="$PROJECT_DIR$/src/propellerhead/ibus_cdplayer.go" />
+        <option value="$PROJECT_DIR$/src/ibus_send.go" />
+        <option value="$PROJECT_DIR$/src/propellerhead/serialport.go" />
       </list>
     </option>
   </component>
@@ -292,50 +288,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="propellerhead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propellerhead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propellerhead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="github.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propellerhead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propellerhead" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="github.com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mikepb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="serial" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -752,14 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ibus_send.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="444">
-          <caret line="7" column="21" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/serial_logger.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57632935" vertical-offset="0" max-vertical-offset="583">
@@ -837,14 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ibus_debugger.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/github.com/mikepb/serial/macosx.c">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2820">
@@ -889,22 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
           <caret line="16" column="14" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_serial.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="708">
-          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/propellerhead/serialport.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="696">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -959,8 +879,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_cdplayer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45639864" vertical-offset="137" max-vertical-offset="1092">
+        <state vertical-scroll-proportion="0.0" vertical-offset="137" max-vertical-offset="1092">
           <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ibus_debugger.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ibus_send.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="372">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/propellerhead/ibus_serial.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="708">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/propellerhead/serialport.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38052094" vertical-offset="0" max-vertical-offset="883">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
           <folding />
         </state>
       </provider>
