@@ -31,8 +31,8 @@ func (i *IbusSerialInterface) Listen(ttyPath string) {
 		go func() {
 			for {
 				pkt := <- i.outboundPackets
-				Logger().Debug("sent packet " + pkt.AsString())
 				serialPort.Write(pkt.AsBytes())
+				Logger().Debug("sent packet " + pkt.AsString())
 			}
 		}()
 	}

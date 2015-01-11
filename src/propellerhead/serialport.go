@@ -23,6 +23,7 @@ func OpenSerialPort(ttyPath string) (*SerialPort) {
 		config := linux_serial.RawOptions
 		config.FlowControl = linux_serial.FLOWCONTROL_RTSCTS
 		config.BitRate = 9600
+		config.Parity = linux_serial.PARITY_EVEN
 
 		port, _ := config.Open(ttyPath)
 		port.SetReadDeadline(time.Time{})
