@@ -61,7 +61,7 @@ func (s *SerialPort) Write(data []byte) {
 		numWritten, err := s.linuxPort.Write(data)
 		Logger().Debug(numWritten)
 		if (err != nil) {
-			Logger().Warn(err)
+			Logger().Debug(err)
 		}
 	}
 }
