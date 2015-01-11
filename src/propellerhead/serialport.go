@@ -36,6 +36,7 @@ func OpenSerialPort(ttyPath string) (*SerialPort) {
 		port, _ := config.Open(ttyPath)
 		port.SetReadDeadline(time.Time{})
 		port.SetWriteDeadline(time.Time{})
+		linux_serial.SetDebug(true)
 		s.linuxPort = port
 	}
 	return s
@@ -57,6 +58,10 @@ func (s *SerialPort) Write(data []byte) {
 		port := *s.macPort
 		port.Write(data)
 	} else {
-		s.linuxPort.Write(data)
+		numWritten, err := s.linuxPort.Write(data)
+		Logger().Debug(numWritten)
+		if (err != nil) {
+			Logger().Warn(err)
+		}
 	}
 }
