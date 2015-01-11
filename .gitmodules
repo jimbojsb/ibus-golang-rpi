@@ -19,9 +19,3 @@
 [submodule "src/github.com/mikepb/serial"]
 	path = src/github.com/mikepb/serial
 	url = http://github.com/mikepb/go-serial.git
-[submodule "src/edartuz/serial"]
-	path = src/edartuz/serial
-	url = http://github.com/edartuz/go-serial.git
-[submodule "src/github.com/edartuz/serial"]
-	path = src/github.com/edartuz/serial
-	url = http://github.com/edartuz/go-serial.git
