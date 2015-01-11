@@ -1,0 +1,20 @@
+---
+- hosts: all
+  tasks:
+  - pacman: update_cache=yes
+  - pacman: name=git
+  - pacman: name=go
+  - pacman: name=mpd
+  - pacman: name=dhcp
+  - pacman: name=bridge-utils
+  - pacman: name=vim
+  - pacman: name=base-devel
+  - pacman: name=libunistring
+  - command: pacman-db-upgrade
+
+  - command: hostnamectl set-hostname propellerhead.local
+  - service: name=avahi-daemon state=restarted
+
+  - git: accept_hostkey=yes repo=https://github.com/jimbojsb/shairport.git version=dacp dest=/root/shairport
+  - command: chdir=/root/shairport configure && make clean && make
+  - copy: src=/root/shairport/shairport dest=/usr/bin/shairport

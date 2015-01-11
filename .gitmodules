@@ -16,3 +16,6 @@
 [submodule "src/github.com/mikepb/serial"]
 	path = src/github.com/mikepb/serial
 	url = https://github.com/mikepb/go-serial.git
+[submodule "src/github.com/johnlauer/serial"]
+	path = src/github.com/johnlauer/serial
+	url = http://github.com/johnlauer/goserial

@@ -18,8 +18,10 @@ func NewIbusPacketParser() (*IbusPacketParser) {
 	return p
 }
 
-func (p *IbusPacketParser) Push(byte byte) {
-	p.buffer = append(p.buffer, byte)
+func (p *IbusPacketParser) Push(bytes []byte) {
+	for _, el := range bytes {
+		p.buffer = append(p.buffer, el)
+	}
 	p.parse()
 }
 

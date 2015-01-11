@@ -4,7 +4,7 @@ const IBUS_DEVICE_RADIO = "68"
 const IBUS_DEVICE_CDPLAYER = "18"
 const IBUS_DEVICE_BOARD_MONITOR_BUTTONS = "f0"
 const IBUS_DEVICE_IKE = "80"
-const IBUS_DEVICE_STEERING_WHEEL = "50"
+const IBUS_DEVICE_MFW = "50"
 const IBUS_DEVICE_NAV_COMPUTER = "3b"
 const IBUS_DEVICE_PARK_DISTANCE = "60"
 const IBUS_DEVICE_LIGHT_CONTROL = "bf"
@@ -16,6 +16,7 @@ type IbusDeviceRegistry struct {
 	SerialInterface *IbusSerialInterface
 	NavigationComputer *IbusNavigationComputer
 	Broadcast *IbusBroadcast
+	Radio *IbusRadio
 }
 
 var IbusDeviceNames = map[string]string {
@@ -23,7 +24,7 @@ var IbusDeviceNames = map[string]string {
 	IBUS_DEVICE_CDPLAYER: "CDPLAYER",
 	IBUS_DEVICE_BOARD_MONITOR_BUTTONS: "BMBUTTONS",
 	IBUS_DEVICE_IKE: "IKE",
-	IBUS_DEVICE_STEERING_WHEEL: "MFWHEEL",
+	IBUS_DEVICE_MFW: "MFWHEEL",
 	IBUS_DEVICE_NAV_COMPUTER: "NAV",
 	IBUS_DEVICE_PARK_DISTANCE: "PDC",
 	IBUS_DEVICE_LIGHT_CONTROL: "LCM",
@@ -39,6 +40,7 @@ func IbusDevices() (*IbusDeviceRegistry) {
 		ibusDeviceregistry.SerialInterface = NewSerialInterface()
 		ibusDeviceregistry.NavigationComputer = NewIbusNavigationComputer()
 		ibusDeviceregistry.Broadcast = NewIbusBroadcast()
+		ibusDeviceregistry.Radio = NewIbusRadio()
 	}
 	return ibusDeviceregistry
 }

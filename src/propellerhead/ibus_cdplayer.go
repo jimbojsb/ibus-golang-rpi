@@ -41,6 +41,10 @@ func (cdp *CdPlayer) Handle(p *IbusPacket) {
 		if p.messageIs([]string{"38", "03", "00"}) {
 			Emitter().Emit(EVENT_IBUS_CD_PLAY)
 		}
+		if (p.messageIs([]string{"38", "00", "00"})) {
+			Logger().Info("received cd status request")
+			cdp.status()
+		}
 	}
 }
 
@@ -61,22 +65,21 @@ func (cdp *CdPlayer) announce() {
 }
 
 func (cdp *CdPlayer) pong() {
-	if (!cdp.hasBeenPolled) {
-		cdp.hasBeenPolled = true
-		pkt := new(IbusPacket)
-		pkt.Src = IBUS_DEVICE_CDPLAYER
-		pkt.Dest = IBUS_DEVICE_BROADCAST
-		pkt.Message = []string{"02", "00"}
-		IbusDevices().SerialInterface.Write(pkt)
-		Logger().Info("sent cdplayer broadcast pong")
-	} else {
-		pkt := new(IbusPacket)
-		pkt.Src = IBUS_DEVICE_CDPLAYER
-		pkt.Dest = IBUS_DEVICE_RADIO
-		pkt.Message = []string{"39", "00", "02", "00", "3F", "00", "01", "01"}
-		IbusDevices().SerialInterface.Write(pkt)
-		Logger().Info("sent cdplayer radio status pong")
-	}
+	cdp.hasBeenPolled = true
+	pkt := new(IbusPacket)
+	pkt.Src = IBUS_DEVICE_CDPLAYER
+	pkt.Dest = IBUS_DEVICE_BROADCAST
+	pkt.Message = []string{"02", "00"}
+	IbusDevices().SerialInterface.Write(pkt)
+	Logger().Info("sent cdplayer pong")
 }
 
+func (cdp *CdPlayer) status() {
+	pkt := new(IbusPacket)
+	pkt.Src = IBUS_DEVICE_CDPLAYER
+	pkt.Dest = IBUS_DEVICE_RADIO
+	pkt.Message = []string{"39", "00", "09", "00", "3f", "00", "01", "01"}
+	IbusDevices().SerialInterface.Write(pkt)
+	Logger().Info("sent cd status response")
+}
 

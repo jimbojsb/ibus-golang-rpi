@@ -1,0 +1,2 @@
+arch-base ansible_ssh_host=alarmpi.local ansible_ssh_user=root ansible_ssh_pass=root ansible_python_interpreter=/usr/bin/python2
+provisioned ansible_ssh_host=propellerhead.local ansible_ssh_user=root ansible_ssh_pass=root ansible_python_interpreter=/usr/bin/python2

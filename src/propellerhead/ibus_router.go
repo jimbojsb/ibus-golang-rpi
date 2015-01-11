@@ -27,35 +27,12 @@ func (r *IbusPacketRouter) route(p *IbusPacket) {
 		IbusDevices().NavigationComputer.Handle(p)
 	case IBUS_DEVICE_BROADCAST:
 		IbusDevices().Broadcast.Handle(p)
+	case IBUS_DEVICE_RADIO:
+		IbusDevices().Radio.Handle(p)
 	}
 
+
 //	switch (p.Src) {
-//
-//	case DEVICE_RADIO:
-//		fmt.Print("RADIO -> ")
-//		switch(p.Dest) {
-//		case DEVICE_CDPLAYER:
-//			fmt.Print("CDPLAYER: ")
-//			if (p.messageIs([]string{"01"})) {
-//				fmt.Println("ping")
-//			}
-//		case DEVICE_BROADCAST:
-//			fmt.Print("BROADCAST: ")
-//			if (p.messageIs([]string{"02", "00"})) {
-//				fmt.Println("pong")
-//			}
-//		}
-//
-//	case DEVICE_CDPLAYER:
-//		fmt.Print("CDPLAYER -> ")
-//		switch (p.Dest) {
-//		case DEVICE_RADIO:
-//			fmt.Print("RADIO ")
-//			if (p.messageIs([]string{"02", "00"})) {
-//				fmt.Println("pong")
-//			}
-//		}
-//
 //
 //	case DEVICE_IKE:
 //		fmt.Print("IKE -> ")

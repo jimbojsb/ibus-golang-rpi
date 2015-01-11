@@ -1,9 +1,5 @@
 package propellerhead
 
-import (
-	"github.com/mikepb/serial"
-)
-
 type IbusSerialInterface struct {
 	inboundPackets chan *IbusPacket
 	outboundPackets chan *IbusPacket
@@ -27,14 +23,9 @@ func (i *IbusSerialInterface) Write (pkt *IbusPacket) {
 	i.outboundPackets <- pkt
 }
 
-func (i *IbusSerialInterface) Listen(ioDevicePath string) {
+func (i *IbusSerialInterface) Listen(ttyPath string) {
 
-	config := serial.RawOptions
-	config.FlowControl = serial.FLOWCONTROL_RTSCTS
-	config.BitRate = 9600
-
-	serialPort, _ := config.Open(ioDevicePath)
-	defer serialPort.Close()
+	serialPort := OpenSerialPort(ttyPath)
 
 	if (!i.LogOnly) {
 		go func() {
@@ -48,9 +39,8 @@ func (i *IbusSerialInterface) Listen(ioDevicePath string) {
 
 	go func() {
 		for {
-			char := make([]byte, 1)
-			serialPort.Read(char)
-			i.parser.Push(char[0])
+			nextByte := serialPort.Read()
+			i.parser.Push(nextByte)
 			if (i.parser.HasPacket()) {
 				pkt := i.parser.GetPacket();
 				Logger().Debug("received packet " + pkt.AsString())
