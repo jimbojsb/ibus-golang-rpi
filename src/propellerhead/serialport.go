@@ -36,7 +36,6 @@ func OpenSerialPort(ttyPath string) (*SerialPort) {
 		port, _ := config.Open(ttyPath)
 		port.SetReadDeadline(time.Time{})
 		port.SetWriteDeadline(time.Time{})
-		linux_serial.SetDebug(true)
 		s.linuxPort = port
 	}
 	return s

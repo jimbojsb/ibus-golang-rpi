@@ -25,10 +25,10 @@ func (i *IbusSerialInterface) Write (pkt *IbusPacket) {
 
 func (i *IbusSerialInterface) Listen(ttyPath string) {
 
-	serialPort := OpenSerialPort(ttyPath)
 
 	if (!i.LogOnly) {
 		go func() {
+			serialPort := OpenSerialPort(ttyPath)
 			for {
 				pkt := <- i.outboundPackets
 				serialPort.Write(pkt.AsBytes())
@@ -38,6 +38,7 @@ func (i *IbusSerialInterface) Listen(ttyPath string) {
 	}
 
 	go func() {
+		serialPort := OpenSerialPort(ttyPath)
 		for {
 			nextByte := serialPort.Read()
 			i.parser.Push(nextByte)
