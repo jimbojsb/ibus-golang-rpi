@@ -1,5 +1,10 @@
 package propellerhead
 
+import (
+	"os"
+	"syscall"
+)
+
 type IbusSerialInterface struct {
 	inboundPackets chan *IbusPacket
 	outboundPackets chan *IbusPacket
@@ -28,10 +33,10 @@ func (i *IbusSerialInterface) Listen(ttyPath string) {
 
 	if (!i.LogOnly) {
 		go func() {
-			serialPort := OpenSerialPort(ttyPath)
+			fh, _ := os.OpenFile(ttyPath, syscall.O_WRONLY, 0666)
 			for {
 				pkt := <- i.outboundPackets
-				serialPort.Write(pkt.AsBytes())
+				fh.Write(pkt.AsBytes())
 				Logger().Debug("sent packet " + pkt.AsString())
 			}
 		}()
