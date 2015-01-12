@@ -14,5 +14,8 @@ func main() {
 	ttyPath := os.Args[1];
 	propellerhead.IbusDevices().SerialInterface.Listen(ttyPath)
 
+	wait.Add(1)
+	propellerhead.NewAudioController()
+
 	wait.Wait()
 }

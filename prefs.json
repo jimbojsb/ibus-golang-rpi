@@ -10,6 +10,6 @@
         "Display": "16x9"
     },
     "State": {
-        "AudioSource": "mpd"
+        "AudioSource": "airplay"
     }
 }

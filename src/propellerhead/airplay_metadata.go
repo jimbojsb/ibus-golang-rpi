@@ -2,7 +2,6 @@ package propellerhead
 
 import (
 	"bufio"
-	"fmt"
 	"os"
 	"strings"
 )
@@ -20,7 +19,7 @@ func (mdl *AirplayMetadataListener) Listen(quit chan bool) {
 	fifo, _ := os.Open(GetWorkingDir() + "/shairport/now_playing")
 
 	go func() {
-		fmt.Println("Started shairport metadata listener")
+		Logger().Info("Started shairport metadata listener")
 		scanner := bufio.NewScanner(fifo)
 		var lines []string
 		for scanner.Scan() {
@@ -49,5 +48,5 @@ func (mdl *AirplayMetadataListener) Listen(quit chan bool) {
 	}()
 	<-quit
 	fifo.Close()
-	fmt.Println("Stopped shairport metadata listener")
+	Logger().Info("Stopped shairport metadata listener")
 }

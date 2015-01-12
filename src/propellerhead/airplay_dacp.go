@@ -2,7 +2,6 @@ package propellerhead
 
 import (
 	"bufio"
-	"fmt"
 	"net/http"
 	"os"
 	"os/exec"
@@ -21,7 +20,7 @@ func (dacp *AirplayDacpRemote) Listen(quit chan bool) {
 	fifo, _ := os.Open(GetWorkingDir() + "/shairport/dacp")
 
 	go func() {
-		fmt.Println("Started shairport dacp listener")
+		Logger().Info("Started shairport dacp listener")
 		scanner := bufio.NewScanner(fifo)
 		var lines []string
 		for scanner.Scan() {
@@ -36,6 +35,7 @@ func (dacp *AirplayDacpRemote) Listen(quit chan bool) {
 						dacp.active_remote = parts[1]
 					}
 				}
+				Logger().Debug("here")
 				dacp.resolveMdns()
 				lines = make([]string, 0)
 			} else {
@@ -45,7 +45,7 @@ func (dacp *AirplayDacpRemote) Listen(quit chan bool) {
 	}()
 	<-quit
 	fifo.Close()
-	fmt.Println("Stopped shairport dacp listener")
+	Logger().Info("Stopped shairport dacp listener")
 }
 
 func (dacp *AirplayDacpRemote) FastForward() {
@@ -82,6 +82,7 @@ func (dacp *AirplayDacpRemote) Stop() {
 
 func (dacp *AirplayDacpRemote) IssueCommand(command string) {
 	url := "http://" + dacp.host + ":" + dacp.port + "/ctrl-int/1/" + command
+	Logger().Debug("dacp: " + url)
 	request, _ := http.NewRequest("GET", url, nil)
 	request.Header.Add("Active-Remote", dacp.active_remote)
 	http.DefaultClient.Do(request)
@@ -91,12 +92,14 @@ func (dacp *AirplayDacpRemote) resolveMdns() {
 
 	dacpRecordName := "iTunes_Ctrl_" + dacp.dacp_id + "._dacp._tcp.local"
 	dacpRecordCmd := exec.Command("/usr/bin/dig", "+short", "@224.0.0.251", "-p", "5353", dacpRecordName, "SRV")
+	Logger().Debug(dacpRecordCmd)
 	dacpRecordOutputBytes, _ := dacpRecordCmd.Output()
 	dacpRecordParts := strings.Split(string(dacpRecordOutputBytes), " ")
 	dacp.port = dacpRecordParts[2]
 
 	hostname := strings.TrimSpace(dacpRecordParts[3])
 	hostnameRecordCmd := exec.Command("/usr/bin/dig", "+short", "@224.0.0.251", "-p", "5353", hostname, "A")
+	Logger().Debug(hostnameRecordCmd)
 	hostnameRecordOutputBytes, _ := hostnameRecordCmd.Output()
 	hostnameRecordOutput := string(hostnameRecordOutputBytes)
 	dacp.host = strings.TrimSpace(hostnameRecordOutput)

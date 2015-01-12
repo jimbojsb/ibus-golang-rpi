@@ -1,7 +1,6 @@
 package propellerhead
 
 import (
-	"fmt"
 	"os/exec"
 	"runtime"
 	"io/ioutil"
@@ -13,14 +12,14 @@ func RunMpd(c chan bool) {
 	cmd := exec.Command("/usr/local/bin/mpd", "--no-daemon", GetWorkingDir()+"/mpd/mpd.conf")
 
 	go func() {
-		fmt.Println("started mpd")
+		Logger().Info("started mpd")
 		cmd.Run()
-		fmt.Println("stopped mpd")
+		Logger().Info("stopped mpd")
 	}()
 
 	go func(quit chan bool) {
 		<-quit
-		fmt.Println("Received kill signal for mpd")
+		Logger().Info("Received kill signal for mpd")
 		cmd.Process.Kill()
 	}(c)
 }

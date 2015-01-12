@@ -1,22 +1,21 @@
 package propellerhead
 
 import (
-	"fmt"
 	"os/exec"
 )
 
 func RunShairport(c chan bool) {
-	cmd := exec.Command(GetWorkingDir()+"/shairport", "-M", GetWorkingDir()+"/shairport", "-D", GetWorkingDir()+"/shairport", "-a", Prefs().Airplay.SpeakerName)
+	cmd := exec.Command("/usr/local/bin/shairport", "-M", GetWorkingDir()+"/shairport", "-D", GetWorkingDir()+"/shairport", "-a", Prefs().Airplay.SpeakerName)
 
 	go func() {
-		fmt.Println("started shairport")
+		Logger().Info("starting shairport")
 		cmd.Run()
-		fmt.Println("stopped shairport")
+		Logger().Info("stopped shairport")
 	}()
 
 	go func(quit chan bool) {
 		<-quit
-		fmt.Println("Received kill signal for shairport")
+		Logger().Info("received kill signal for shairport")
 		cmd.Process.Kill()
 	}(c)
 }
