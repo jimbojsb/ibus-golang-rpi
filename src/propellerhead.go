@@ -17,5 +17,8 @@ func main() {
 	wait.Add(1)
 	propellerhead.NewAudioController()
 
+	wait.Add(1)
+	propellerhead.ServeApi()
+
 	wait.Wait()
 }
