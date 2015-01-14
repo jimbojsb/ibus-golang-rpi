@@ -65,6 +65,17 @@ func getHexStringFromByte(b byte) (string) {
 	return hex.EncodeToString([]byte{b})
 }
 
+func stringAsHexStringSlice(text string) ([]string) {
+	stringAsBytes := []byte(text)
+
+	hexChars := make([]string, 0)
+	for _, el := range stringAsBytes {
+		hexChar := getHexStringFromByte(el)
+		hexChars = append(hexChars, hexChar)
+	}
+	return hexChars
+}
+
 func getHexStringSliceFromByteSlice(bytes []byte) ([]string) {
 	output := make([]string, 0)
 	for _, el := range bytes {
@@ -95,3 +106,4 @@ func (pkt *IbusPacket) IsValid() (bool) {
 	actualChecksum := pkt.CalculateChecksum()
 	return expectedChecksum == actualChecksum
 }
+

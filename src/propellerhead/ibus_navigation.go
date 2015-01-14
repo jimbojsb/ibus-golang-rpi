@@ -77,12 +77,7 @@ func (nav *IbusNavigationComputer) WriteTextArea(area string, text string) {
 		}
 	}
 
-	stringAsBytes := []byte(text)
-
-	for _, el := range stringAsBytes {
-		hexChar := getHexStringFromByte(el)
-		hexChars = append(hexChars, hexChar)
-	}
+	hexChars = append(hexChars, stringAsHexStringSlice(text)...)
 	pkt.Src = IBUS_DEVICE_RADIO
 	pkt.Dest = IBUS_DEVICE_NAV_COMPUTER
 	pkt.Message = hexChars
