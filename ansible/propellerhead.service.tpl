@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=/root/propellerhead
+ExecStart=/root/ph/propellerhead /dev/ttyUSB0
 
 [Install]
 WantedBy=multi-user.target

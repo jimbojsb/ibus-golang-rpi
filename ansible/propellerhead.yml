@@ -10,7 +10,18 @@
   - pacman: name=vim
   - pacman: name=base-devel
   - pacman: name=libunistring
+  - pacman: name=dnsutils
+  - pacman: name=linux-firmware
+  - pacman: name=raspberrypi-firmware-bootloader
+  - pacman: name=raspberrypi-firmware-bootloader-x
+  - pacman: name=raspberrypi-firmware-tools
+  - pacman: name=linux-raspberrypi
+  - pacman: name=linux-api-headers
+  - pacman: name=kmod
+  - pacman: name=alsa-utils
+
   - command: pacman-db-upgrade
+
 
   - command: hostnamectl set-hostname propellerhead.local
   - service: name=avahi-daemon state=restarted

@@ -1,0 +1,5 @@
+bcm2708-rng
+snd_soc_bcm2708
+bcm2708_dmaengine
+snd_soc_pcm512x
+snd_soc_hifiberry_dacplus

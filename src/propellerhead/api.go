@@ -29,6 +29,16 @@ func ServeApi() {
 		res.Write(json)
 	}).Methods("POST")
 
+	r.HandleFunc("/system/update", func(res http.ResponseWriter, req *http.Request) {
+		Logger().Info("api: POST /system/update")
+
+	}).Methods("POST")
+
+	r.HandleFunc("/system/version", func(res http.ResponseWriter, req *http.Request) {
+		Logger().Info("api: GET /system/version")
+
+	}).Methods("GET")
+
 	http.Handle("/", r)
 	http.ListenAndServe(":3281", nil)
 }
