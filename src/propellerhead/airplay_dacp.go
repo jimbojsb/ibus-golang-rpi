@@ -90,24 +90,42 @@ func (dacp *AirplayDacpRemote) IssueCommand(command string) {
 
 func (dacp *AirplayDacpRemote) resolveMdns() {
 
-	var hostname string
-	var port string
-	if runtime.GOOS == "darwin" {
+	strrev := func(s string) string {
+		r := []rune(s)
+		for i, j := 0, len(r)-1; i < len(r)/2; i, j = i+1, j-1 {
+			r[i], r[j] = r[j], r[i]
+		}
+		return string(r)
+	}
+
+	if (runtime.GOOS == "darwin") {
 		dacpRecordName := "iTunes_Ctrl_" + dacp.dacp_id + "._dacp._tcp.local"
-		dacpRecordCmd := exec.Command("/usr/local/bin/gtimeout", "1", dacpRecordName, "srv")
+		dacpRecordCmd := exec.Command("/usr/local/bin/gtimeout", "1", "dns-sd", "-q", dacpRecordName, "srv")
 		Logger().Debug(dacpRecordCmd)
 		dacpRecordOutputBytes, _ := dacpRecordCmd.Output()
-		dacpRecordParts := strings.Split(string(dacpRecordOutputBytes), " ")
-		dacp.port = dacpRecordParts[2]
+		dacpRecordLines := strings.Split(string(dacpRecordOutputBytes), "\n")
+		dacpRecordLine := strrev(dacpRecordLines[3]);
+		dacpRecordColumns := strings.Split(dacpRecordLine, " ");
+		dacpRecordHostname := strrev(dacpRecordColumns[0]);
+		dacp.port = strrev(dacpRecordColumns[1]);
 
-		hostname := strings.TrimSpace(dacpRecordParts[3])
-		hostnameRecordCmd := exec.Command("/usr/bin/dig", "+short", "@224.0.0.251", "-p", "5353", hostname, "A")
+		hostnameRecordCmd := exec.Command("/usr/local/bin/gtimeout", "1", "dns-sd", "-q", dacpRecordHostname);
 		Logger().Debug(hostnameRecordCmd)
-		hostnameRecordOutputBytes, _ := hostnameRecordCmd.Output()
-		hostnameRecordOutput := string(hostnameRecordOutputBytes)
-		dacp.host = strings.TrimSpace(hostnameRecordOutput)
+		hostnameRecordOutputBytes, _ := hostnameRecordCmd.Output();
+		hostnameRecordLines := strings.Split(string(hostnameRecordOutputBytes), "\n");
+		hostnameRecordLine := strrev(hostnameRecordLines[3]);
+		hostnameRecordColumns := strings.Split(hostnameRecordLine, " ");
+		dacp.host = strrev(hostnameRecordColumns[0]);
 	} else {
-
+		dacpRecordCmd := exec.Command("/usr/bin/avahi-browse", "--resolve", "-p", "-t", "_dacp._tcp")
+		Logger().Debug(dacpRecordCmd)
+		dacpRecordOutputBytes, _ := dacpRecordCmd.Output()
+		dacpRecordLines := strings.Split(string(dacpRecordOutputBytes), "\n")
+		dacpRecordLine := dacpRecordLines[1];
+		dacpRecordColumns := strings.Split(dacpRecordLine, ";");
+		dacp.host = dacpRecordColumns[7];
+		dacp.port = dacpRecordColumns[6];
 	}
+	Logger().Info("DACP Discovered: " + dacp.host + ":" + dacp.port);
 
 }

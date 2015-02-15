@@ -36,7 +36,9 @@ func ServeApi() {
 
 	r.HandleFunc("/system/version", func(res http.ResponseWriter, req *http.Request) {
 		Logger().Info("api: GET /system/version")
-
+		res.Header().Set("Content-Type", "application/json")
+		json, _ := json.Marshal(map[string]int{"version": PROPELLERHEAD_VERSION})
+		res.Write(json)
 	}).Methods("GET")
 
 	http.Handle("/", r)
