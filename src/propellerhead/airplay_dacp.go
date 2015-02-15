@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
+	"runtime"
 	"strings"
 )
 
@@ -35,7 +36,6 @@ func (dacp *AirplayDacpRemote) Listen(quit chan bool) {
 						dacp.active_remote = parts[1]
 					}
 				}
-				Logger().Debug("here")
 				dacp.resolveMdns()
 				lines = make([]string, 0)
 			} else {
@@ -90,17 +90,24 @@ func (dacp *AirplayDacpRemote) IssueCommand(command string) {
 
 func (dacp *AirplayDacpRemote) resolveMdns() {
 
-	dacpRecordName := "iTunes_Ctrl_" + dacp.dacp_id + "._dacp._tcp.local"
-	dacpRecordCmd := exec.Command("/usr/bin/dig", "+short", "@224.0.0.251", "-p", "5353", dacpRecordName, "SRV")
-	Logger().Debug(dacpRecordCmd)
-	dacpRecordOutputBytes, _ := dacpRecordCmd.Output()
-	dacpRecordParts := strings.Split(string(dacpRecordOutputBytes), " ")
-	dacp.port = dacpRecordParts[2]
+	var hostname string
+	var port string
+	if runtime.GOOS == "darwin" {
+		dacpRecordName := "iTunes_Ctrl_" + dacp.dacp_id + "._dacp._tcp.local"
+		dacpRecordCmd := exec.Command("/usr/local/bin/gtimeout", "1", dacpRecordName, "srv")
+		Logger().Debug(dacpRecordCmd)
+		dacpRecordOutputBytes, _ := dacpRecordCmd.Output()
+		dacpRecordParts := strings.Split(string(dacpRecordOutputBytes), " ")
+		dacp.port = dacpRecordParts[2]
 
-	hostname := strings.TrimSpace(dacpRecordParts[3])
-	hostnameRecordCmd := exec.Command("/usr/bin/dig", "+short", "@224.0.0.251", "-p", "5353", hostname, "A")
-	Logger().Debug(hostnameRecordCmd)
-	hostnameRecordOutputBytes, _ := hostnameRecordCmd.Output()
-	hostnameRecordOutput := string(hostnameRecordOutputBytes)
-	dacp.host = strings.TrimSpace(hostnameRecordOutput)
+		hostname := strings.TrimSpace(dacpRecordParts[3])
+		hostnameRecordCmd := exec.Command("/usr/bin/dig", "+short", "@224.0.0.251", "-p", "5353", hostname, "A")
+		Logger().Debug(hostnameRecordCmd)
+		hostnameRecordOutputBytes, _ := hostnameRecordCmd.Output()
+		hostnameRecordOutput := string(hostnameRecordOutputBytes)
+		dacp.host = strings.TrimSpace(hostnameRecordOutput)
+	} else {
+
+	}
+
 }
