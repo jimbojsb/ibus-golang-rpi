@@ -2,52 +2,42 @@ package propellerhead
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"os"
 )
 
-type Preferences struct {
-	Airplay struct {
-		SpeakerName string
+type preferences struct {
+	airplay struct {
+		speaker_name string
 	}
-	Wireless struct {
-		Ssid     string
-		Password string
+	audio struct {
+		source string
 	}
-	Ibus struct {
-		Display string
-	}
-	State struct {
-		AudioSource string
+	mpd struct {
+		library_path string
+		playlist_path string
 	}
 }
 
 
 
 func CreatePreferencesFile() {
-	fmt.Println("Creating default prefs.json")
-	p := new(Preferences)
-	p.Airplay.SpeakerName = "propellerhead"
-	p.Wireless.Ssid = "propellerhead"
-	p.Wireless.Password = "propellerhead"
-	p.Ibus.Display = "16x9"
-	p.State.AudioSource = "airplay"
+	Logger().Info("Creating default prefs.json")
+	p := new(preferences)
+	p.airplay.speaker_name = "propellerhead"
+	p.audio.source = "airplay"
 }
 
-func Prefs() Preferences {
+func Prefs() preferences {
 
 	prefsFile := GetWorkingDir() + "/prefs.json"
 	if _, err := os.Stat(prefsFile); err != nil {
 		CreatePreferencesFile()
 	}
 
-	jsonString, err := ioutil.ReadFile(prefsFile)
-	if err != nil {
-		fmt.Println(err.Error)
-	}
+	jsonString, _ := ioutil.ReadFile(prefsFile)
 
-	var p Preferences
+	var p preferences
 	json.Unmarshal(jsonString, &p)
 	return p
 }
@@ -57,14 +47,7 @@ func GetWorkingDir() string {
 	return workingDir
 }
 
-func (p *Preferences) Save() {
-	workingDir, err := os.Getwd()
-	if err != nil {
-		fmt.Println(err)
-	}
-	jsonString, err := json.MarshalIndent(p, "", "    ")
-	if err != nil {
-		fmt.Println(err)
-	}
-	ioutil.WriteFile(workingDir+"/prefs.json", jsonString, 0664)
+func (p *preferences) Save() {
+	jsonString, _ := json.MarshalIndent(p, "", "    ")
+	ioutil.WriteFile(GetWorkingDir() + "/prefs.json", jsonString, 0664)
 }

@@ -27,7 +27,7 @@ type AudioController struct {
 
 func NewAudioController() (*AudioController) {
 	ac := new(AudioController)
-	ac.SetSource(Prefs().State.AudioSource)
+	ac.SetSource(Prefs().audio.source)
 	ac.bindEvents()
 	return ac
 }
@@ -67,10 +67,8 @@ func (ac *AudioController) SetSource(source string) {
 	}
 
 	p := Prefs()
-	p.State.AudioSource = ac.source
+	p.audio.source = ac.source
 	p.Save()
-
-	ac.Play()
 }
 
 func (ac *AudioController) Stop() {

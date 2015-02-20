@@ -1,0 +1,24 @@
+[submodule "src/github.com/fhs/gompd"]
+	path = src/github.com/fhs/gompd
+	url = http://github.com/fhs/gompd.git
+[submodule "src/github.com/gorilla/context"]
+	path = src/github.com/gorilla/context
+	url = http://github.com/gorilla/context.git
+[submodule "src/github.com/gorilla/mux"]
+	path = src/github.com/gorilla/mux
+	url = http://github.com/gorilla/mux.git
+[submodule "src/github.com/chuckpreslar/emission"]
+	path = src/github.com/chuckpreslar/emission
+	url = http://github.com/chuckpreslar/emission.git
+[submodule "src/github.com/sirupsen/logrus"]
+	path = src/github.com/sirupsen/logrus
+	url = http://github.com/sirupsen/logrus.git
+[submodule "src/github.com/johnlauer/serial"]
+	path = src/github.com/johnlauer/serial
+	url = http://github.com/johnlauer/goserial
+[submodule "src/github.com/mikepb/serial"]
+	path = src/github.com/mikepb/serial
+	url = http://github.com/mikepb/go-serial.git
+[submodule "src/github.com/alecthomas/kingpin"]
+	path = src/github.com/alecthomas/kingpin
+	url = https://github.com/alecthomas/kingpin.git

@@ -5,7 +5,7 @@ import (
 )
 
 func RunShairport(c chan bool) {
-	cmd := exec.Command("/usr/local/bin/shairport", "-M", GetWorkingDir()+"/shairport", "-D", GetWorkingDir()+"/shairport", "-a", Prefs().Airplay.SpeakerName)
+	cmd := exec.Command("/usr/local/bin/shairport", "-M", GetWorkingDir()+"/shairport", "-D", GetWorkingDir()+"/shairport", "-a", Prefs().airplay.speaker_name)
 
 	go func() {
 		Logger().Info("starting shairport")

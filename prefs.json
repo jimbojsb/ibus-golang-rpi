@@ -1,15 +1,1 @@
-{
-    "Airplay": {
-        "SpeakerName": "Propellerhead"
-    },
-    "Wireless": {
-        "Ssid": "propellerhead",
-        "Password": "propellerhead"
-    },
-    "Ibus": {
-        "Display": "16x9"
-    },
-    "State": {
-        "AudioSource": "airplay"
-    }
-}
+{}
