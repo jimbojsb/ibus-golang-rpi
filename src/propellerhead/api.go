@@ -34,6 +34,13 @@ func ServeApi() {
 
 	}).Methods("POST")
 
+	r.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
+			Logger().Info("api: GET /")
+			res.Header().Set("Content-Type", "application/json")
+			json, _ := json.Marshal("Welcome to Propellerhead")
+			res.Write(json)
+		}).Methods("GET")
+
 	r.HandleFunc("/system/version", func(res http.ResponseWriter, req *http.Request) {
 		Logger().Info("api: GET /system/version")
 		res.Header().Set("Content-Type", "application/json")
